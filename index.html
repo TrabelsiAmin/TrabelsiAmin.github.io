@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#14172f">
+<meta name="theme-color" content="#faf7f2">
 <title>Mohamed Amine Trabelsi | Data & IA</title>
 <meta name="description" content="Étudiant ingénieur Data & IA, à la recherche d'un stage PFE 2027. RAG, vision par ordinateur, applications full-stack.">
 <meta property="og:title" content="Mohamed Amine Trabelsi | Data & IA">
@@ -15,12 +15,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#14172f; --bg2:#1b1f3f; --card:#1e2346; --line:#2c3260;
-  --text:#e8eaf6; --muted:#a3a9cf; --accent:#7c9cff; --accent2:#4fd1c5;
+  --bg:#faf7f2; --bg2:#ffffff; --card:#ffffff; --line:#e6dfd3;
+  --text:#1c1917; --muted:#57534e; --accent:#c2410c; --accent2:#0f766e; --soft:#fff1e6;
 }
-:root[data-theme="light"]{
-  --bg:#f6f7fc; --bg2:#ffffff; --card:#ffffff; --line:#dde1f0;
-  --text:#14172f; --muted:#555b82; --accent:#3b5bdb; --accent2:#0f9d8f;
+:root[data-theme="dark"]{
+  --bg:#12100e; --bg2:#1a1714; --card:#1c1916; --line:#34302a;
+  --text:#f5f0e8; --muted:#b3aa9c; --accent:#fb923c; --accent2:#2dd4bf; --soft:#2a211a;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -45,7 +45,7 @@ h1{font-size:clamp(34px,6vw,52px);line-height:1.1;font-weight:800;margin:18px 0 
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;border:1px solid var(--line);color:var(--text);background:var(--card)}
 .btn:hover{border-color:var(--accent);text-decoration:none}
-.btn.primary{background:var(--accent);color:#0c0f24;border-color:var(--accent)}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
 .photo{width:190px;height:238px;object-fit:cover;border-radius:18px;border:1px solid var(--line)}
 section{padding:44px 0;border-top:1px solid var(--line)}
 h2{font-size:26px;font-weight:700;margin-bottom:24px;letter-spacing:-.01em}
@@ -58,7 +58,16 @@ h2{font-size:26px;font-weight:700;margin-bottom:24px;letter-spacing:-.01em}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
 .tag{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
 .card a.src{font-size:13.5px;font-weight:600;margin-top:4px}
-.shot{width:100%;height:190px;object-fit:cover;object-position:top left;border-radius:10px;border:1px solid var(--line);margin-bottom:4px}
+.proj{display:grid;grid-template-columns:1.25fr 1fr;gap:32px;align-items:center;margin-bottom:56px}
+.proj.rev{grid-template-columns:1fr 1.25fr}
+.proj.rev .pimg{order:2}
+.pimg{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:14px;display:flex;justify-content:center;align-items:center}
+.pimg img{width:100%;height:auto;display:block;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.pimg.phone img{max-width:250px;border-radius:22px}
+.ptxt{display:flex;flex-direction:column;gap:10px}
+.ptxt h3{font-size:24px;letter-spacing:-.01em}
+.ptxt p{font-size:15px;color:var(--muted)}
+.plinks{display:flex;gap:14px;flex-wrap:wrap;margin-top:4px}
 .badge{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent2)}
 .timeline{display:flex;flex-direction:column;gap:18px}
 .job{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
@@ -82,6 +91,8 @@ html.en [data-en]{display:revert}
   .hero{grid-template-columns:1fr;padding-top:36px}
   .photo{order:-1;width:130px;height:162px}
   .grid,.skills{grid-template-columns:1fr}
+  .proj,.proj.rev{grid-template-columns:1fr;gap:16px}
+  .proj.rev .pimg{order:0}
   .links{display:none}
 }
 </style>
@@ -126,47 +137,53 @@ html.en [data-en]{display:revert}
 
 <section id="built">
   <h2><span data-fr>Ce que j'ai construit</span><span data-en>What I've built</span></h2>
-  <div class="grid">
-    <article class="card">
-      <img class="shot" src="assets/TariqMap.jpeg" alt="TariqMap" style="object-position:center">
+  <article class="proj">
+    <div class="pimg phone"><img src="assets/tariqmap.jpg" alt="TariqMap" loading="lazy"></div>
+    <div class="ptxt">
       <span class="badge"><span data-fr>En cours · depuis sep 2026</span><span data-en>In progress · since Sep 2026</span></span>
       <h3>TariqMap</h3>
-      <p class="meta" data-fr>Inspection routière intelligente offline-first</p>
-      <p class="meta" data-en>Offline-first intelligent road inspection</p>
+      <p class="meta" data-fr>Inspection routière intelligente offline-first</p><p class="meta" data-en>Offline-first intelligent road inspection</p>
       <p data-fr>Application mobile d'inspection et de cartographie routière : détection embarquée (YOLOv8, TFLite) des nids-de-poule et fissures, géolocalisation, synchronisation résiliente (SQLite, Supabase) et carte interactive des anomalies.</p>
       <p data-en>Mobile app for road inspection and mapping: on-device detection (YOLOv8, TFLite) of potholes and cracks, geolocation, resilient sync (SQLite, Supabase) and an interactive anomaly map.</p>
       <div class="tags"><span class="tag">Flutter</span><span class="tag">YOLOv8</span><span class="tag">TFLite</span><span class="tag">FastAPI</span><span class="tag">Supabase</span></div>
-      <a class="src" href="https://github.com/Road-damage-project" target="_blank" rel="noopener"><span data-fr>Code source</span><span data-en>Source code</span> →</a>
-    </article>
-    <article class="card">
-      <img class="shot" src="assets/fsb-nexus.jpg" alt="FSB Nexus">
+      <div class="plinks"><a class="src" href="https://github.com/Road-damage-project" target="_blank" rel="noopener"><span data-fr>Code source</span><span data-en>Source code</span> →</a></div>
+    </div>
+  </article>
+  <article class="proj rev">
+    <div class="pimg"><img src="assets/nexus.jpg" alt="FSB Nexus" loading="lazy"></div>
+    <div class="ptxt">
       <span class="meta"><span data-fr>Été</span><span data-en>Summer</span> 2026 · IdeaLab</span>
       <h3>FSB Nexus (Digital Campus)</h3>
+      
       <p data-fr>Assistant multi-agents pour la Faculté des Sciences de Bizerte : il répond à partir des documents officiels de la faculté et montre la page source. Authentification JWT, module RAG agnostique du fournisseur (Mistral, Gemini en secours) sur PostgreSQL et pgvector. Projet réalisé en équipe.</p>
       <p data-en>Multi-agent assistant for the Faculty of Sciences of Bizerte: it answers from the faculty's official documents and shows the source page. JWT authentication, provider-agnostic RAG module (Mistral, Gemini fallback) on PostgreSQL and pgvector. Built as a team.</p>
       <div class="tags"><span class="tag">FastAPI</span><span class="tag">pgvector</span><span class="tag">Mistral</span><span class="tag">Next.js</span><span class="tag">TypeScript</span></div>
-      <a class="src" href="https://github.com/AymenJeddou/digital_campus_platform" target="_blank" rel="noopener"><span data-fr>Code source</span><span data-en>Source code</span> →</a>
-    </article>
-    <article class="card">
-      <img class="shot" src="assets/fsbridge.jpg" alt="FSBridge">
+      <div class="plinks"><a class="src" href="https://github.com/AymenJeddou/digital_campus_platform" target="_blank" rel="noopener"><span data-fr>Code source</span><span data-en>Source code</span> →</a></div>
+    </div>
+  </article>
+  <article class="proj">
+    <div class="pimg"><img src="assets/fsbridge.jpg" alt="FSBridge" loading="lazy"></div>
+    <div class="ptxt">
       <span class="meta">Jan 2026 – <span data-fr>Mai</span><span data-en>May</span> 2026</span>
       <h3>FSBridge</h3>
+      
       <p data-fr>Portail étudiant full-stack : notes et moyenne sur 20, emplois du temps, documents PDF signés, fil d'actualités et assistant IA Gemini pour l'orientation académique. Déployé sur Vercel. Projet réalisé en équipe.</p>
       <p data-en>Full-stack student portal: grades and GPA on the 20-point scale, timetables, signed PDF documents, a news feed and a Gemini AI assistant for academic guidance. Deployed on Vercel. Built as a team.</p>
       <div class="tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Vite</span><span class="tag">Tailwind</span><span class="tag">Supabase</span><span class="tag">Gemini</span></div>
-      <a class="src" href="https://fsbridge.vercel.app" target="_blank" rel="noopener">Demo →</a>
-      <a class="src" href="https://github.com/AymenJeddou/FSBridge" target="_blank" rel="noopener"><span data-fr>Code source</span><span data-en>Source code</span> →</a>
-    </article>
-    <article class="card">
+      <div class="plinks"><a class="src" href="https://fsbridge.vercel.app" target="_blank" rel="noopener">Demo →</a><a class="src" href="https://github.com/AymenJeddou/FSBridge" target="_blank" rel="noopener"><span data-fr>Code source</span><span data-en>Source code</span> →</a></div>
+    </div>
+  </article>
+  <article class="proj" style="grid-template-columns:1fr">
+    <div class="ptxt">
       <span class="meta"><span data-fr>Déc</span><span data-en>Dec</span> 2025 – Jan 2026</span>
       <h3>JobJet</h3>
       <p data-fr>Réseau social professionnel : profils, offres d'emploi, candidatures, messagerie en temps réel, notifications, génération automatique de CV en PDF et modules d'administration et de modération.</p>
       <p data-en>Professional social network: profiles, job postings, applications, real-time messaging, notifications, automatic PDF CV generation, and admin and moderation modules.</p>
       <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">Docker</span></div>
-      <a class="src" href="https://github.com/AymenJeddou/JobJet" target="_blank" rel="noopener"><span data-fr>Code source</span><span data-en>Source code</span> →</a>
-    </article>
-  </div>
-</section>
+      <div class="plinks"><a class="src" href="https://github.com/AymenJeddou/JobJet" target="_blank" rel="noopener"><span data-fr>Code source</span><span data-en>Source code</span> →</a></div>
+    </div>
+  </article>
+  </section>
 
 <section id="worked">
   <h2><span data-fr>Où j'ai travaillé</span><span data-en>Where I've worked</span></h2>
@@ -275,7 +292,7 @@ html.en [data-en]{display:revert}
   var root=document.documentElement;
   function safe(fn){try{return fn()}catch(e){return null}}
   var lang=safe(function(){return localStorage.getItem('lang')})||((navigator.language||'fr').indexOf('fr')===0?'fr':'en');
-  var theme=safe(function(){return localStorage.getItem('theme')})||'dark';
+  var theme=safe(function(){return localStorage.getItem('theme')})||'light';
   function apply(){
     root.classList.toggle('en',lang==='en');
     root.lang=lang;
